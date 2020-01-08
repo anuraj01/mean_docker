@@ -1,0 +1,19 @@
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0px;
+	display: flex;
+	flex-wrap: wrap;
+
+	li {
+		background: #e8e8e8;
+		padding: 10px;
+		margin-right: 10px;
+		width: 200px;
+		height: 200px;
+		margin-bottom: 10px;
+		display: flex;
+		flex-direction: column;
+		font-size: 12px;
+	}
+}

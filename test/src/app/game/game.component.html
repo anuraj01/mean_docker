@@ -1,0 +1,18 @@
+<div class="play-container">
+	<p>Click the button to start the Game !!  <span (click)="counterClick()" class="startbtn" [style.background-color]="isGameEnd ? 'red' : 'green'">{{isTimerOn ? clickCounter : 'Start'}}</span></p>
+
+	<p class="timer" (click)="restartGame()" [ngStyle]="{
+		'background-color': timer > 0 ? 'cyan' : 'green',
+		'color': timer > 0 ? 'black' : 'white' 
+	}">{{timer > 0 ? timer : 'Restart'}}</p>
+</div>
+
+<div class="play-container">
+	<ng-template [ngIf]="isGameEnd" [ngIfElse]="none">
+		<p>Whooohh !! You have scored {{clickCounter}}</p>
+	</ng-template>
+
+	<ng-template #none>
+		<p>Last scored {{lastScore}}</p>
+	</ng-template>
+</div>

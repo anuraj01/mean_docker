@@ -1,0 +1,8 @@
+<h1>Items</h1>
+
+<ul *ngIf="data">
+	<li *ngFor="let item of data">
+		<p class="name">{{item.name}}</p>
+		<p class="country">{{item.country}}</p>
+	</li>
+</ul>

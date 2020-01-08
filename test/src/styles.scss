@@ -1,0 +1,42 @@
+body {
+	margin: 0;
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+header {
+	background: #c5c5c5;
+	padding: 15px 0;
+
+	a {
+		color: #FFF;
+		text-decoration: none;
+	}
+
+	a.logo {
+		font-weight: bold;
+	}
+
+	nav {
+		float: right;
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+			display: flex;
+
+			li a {
+				padding: 10px;
+
+				&:hover {
+					background: darken(#c5c5c5, 10%);
+				}
+			}
+		}
+	}
+}

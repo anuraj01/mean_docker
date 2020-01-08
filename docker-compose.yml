@@ -1,0 +1,25 @@
+version: '3.0'
+
+services:
+ angular: 
+  build: test
+  ports:
+   - "4200:4200"
+  volumes:
+   - /usr/app/test/node_modules
+   - ./test:/usr/app/test
+
+ express:
+  build: test-service
+  ports:
+   - "3000:3000"
+  volumes:
+   - /usr/app/test-service/node_modules
+   - ./test-service:/usr/app/test-service
+  links:
+   - mongo
+
+ mongo:
+  image: mongo
+  ports:
+   - "27017:27017"
