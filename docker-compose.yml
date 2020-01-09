@@ -8,6 +8,16 @@ services:
   volumes:
    - /usr/app/test/node_modules
    - ./test:/usr/app/test
+   
+ mongodb:
+  image: mongo
+  ports:
+   - "27017:27017"
+   
+ mongo-seed:
+  build: ./test-mongo-seed
+  links:
+    - mongodb
 
  express:
   build: test-service
@@ -17,9 +27,4 @@ services:
    - /usr/app/test-service/node_modules
    - ./test-service:/usr/app/test-service
   links:
-   - mongo
-
- mongo:
-  image: mongo
-  ports:
-   - "27017:27017"
+   - mongodb
